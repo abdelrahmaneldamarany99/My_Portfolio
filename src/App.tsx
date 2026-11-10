@@ -176,7 +176,7 @@ export default function App() {
         onToggleTheme={setTheme}
       />
 
-      <main className="flex-1 mt-[50px] ml-[100px]">
+      <main className="flex-1">
         {activeView === 'overview' && (
           <div className="space-y-16 pb-20">
             <Hero
