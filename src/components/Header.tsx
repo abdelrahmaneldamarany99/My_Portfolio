@@ -67,7 +67,7 @@ export function Header({
 
   return (
     <header className="sticky top-0 z-40 dark:bg-[#090D16]/95 bg-white/95 backdrop-blur-md border-b dark:border-white/10 border-slate-200 transition-colors mr-[52px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3 sm:gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3 sm:gap-6 ml-[-22px]">
         <a
           href="#/overview"
           onClick={(e) => {
