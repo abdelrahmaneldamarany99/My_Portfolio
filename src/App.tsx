@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import type {
   ProfileData,
   Project,
@@ -20,18 +20,36 @@ import { fallbackProfile } from './data/fallback.ts';
 import { Header } from './components/Header.tsx';
 import { Hero } from './components/Hero.tsx';
 import { Projects } from './components/Projects.tsx';
-import { ProjectEngagementStats } from './components/ProjectEngagementStats.tsx';
 import { EngineeringRigor } from './components/EngineeringRigor.tsx';
 import { ProjectModal } from './components/ProjectModal.tsx';
 import { Experience } from './components/Experience.tsx';
 import { Skills } from './components/Skills.tsx';
 import { Education } from './components/Education.tsx';
-import { ConsoleSuite, type ConsoleTab } from './components/ConsoleSuite.tsx';
+import type { ConsoleTab } from './components/ConsoleSuite.tsx';
 import { ContactModal } from './components/ContactModal.tsx';
 import { Footer } from './components/Footer.tsx';
-import { GeminiChatbot } from './components/GeminiChatbot.tsx';
-import { LiveVoiceAgent } from './components/LiveVoiceAgent.tsx';
 import { ArrowRight, FolderGit2, ShieldCheck, Milestone, Terminal, FileDown } from 'lucide-react';
+
+const ProjectEngagementStats = lazy(() =>
+  import('./components/ProjectEngagementStats.tsx').then((m) => ({ default: m.ProjectEngagementStats }))
+);
+const ConsoleSuite = lazy(() =>
+  import('./components/ConsoleSuite.tsx').then((m) => ({ default: m.ConsoleSuite }))
+);
+const LiveVoiceAgent = lazy(() =>
+  import('./components/LiveVoiceAgent.tsx').then((m) => ({ default: m.LiveVoiceAgent }))
+);
+const GeminiChatbot = lazy(() =>
+  import('./components/GeminiChatbot.tsx').then((m) => ({ default: m.GeminiChatbot }))
+);
+
+function SectionFallback() {
+  return (
+    <div className="flex items-center justify-center py-24">
+      <div className="w-8 h-8 rounded-full border-2 border-blue-500/30 border-t-blue-500 animate-spin" />
+    </div>
+  );
+}
 
 export default function App() {
   const [activeView, setActiveView] = useState<AppView>(() => {
@@ -160,7 +178,7 @@ export default function App() {
   };
 
   const isAr = language === 'ar';
-  const cvDownloadUrl = '/assets/aistudio/CV_-_En_-PDF___Abd-el-rahman_El-damarany___86505470.pdf';
+  const cvDownloadUrl = '/assets/cv.pdf';
 
   return (
     <div className="min-h-screen dark:bg-[#090D16] bg-[#F8FAFC] dark:text-[#F1F5F9] text-[#0F172A] flex flex-col font-sans selection:bg-blue-600 selection:text-white transition-colors duration-200">
@@ -359,10 +377,12 @@ export default function App() {
               onSelectProject={setSelectedProject}
               language={language}
             />
-            <ProjectEngagementStats
-              projects={projects}
-              language={language}
-            />
+            <Suspense fallback={<SectionFallback />}>
+              <ProjectEngagementStats
+                projects={projects}
+                language={language}
+              />
+            </Suspense>
           </div>
         )}
 
@@ -416,16 +436,18 @@ export default function App() {
 
         {activeView === 'console' && (
           <div className="pb-20 pt-2">
-            <ConsoleSuite
-              tickets={tickets}
-              commits={commits}
-              docs={docs}
-              onRefreshTickets={refreshTickets}
-              language={language}
-              activeTab={consoleTab}
-              onTabChange={setConsoleTab}
-              onBackToPortfolio={() => navigateToView('overview')}
-            />
+            <Suspense fallback={<SectionFallback />}>
+              <ConsoleSuite
+                tickets={tickets}
+                commits={commits}
+                docs={docs}
+                onRefreshTickets={refreshTickets}
+                language={language}
+                activeTab={consoleTab}
+                onTabChange={setConsoleTab}
+                onBackToPortfolio={() => navigateToView('overview')}
+              />
+            </Suspense>
           </div>
         )}
       </main>
@@ -443,15 +465,17 @@ export default function App() {
         language={language}
       />
 
-      <LiveVoiceAgent
-        isOpen={isVoiceAgentOpen}
-        onClose={() => setIsVoiceAgentOpen(false)}
-        language={language}
-      />
+      <Suspense fallback={null}>
+        <LiveVoiceAgent
+          isOpen={isVoiceAgentOpen}
+          onClose={() => setIsVoiceAgentOpen(false)}
+          language={language}
+        />
 
-      <GeminiChatbot
-        language={language}
-      />
+        <GeminiChatbot
+          language={language}
+        />
+      </Suspense>
 
       <Footer
         profile={profile}

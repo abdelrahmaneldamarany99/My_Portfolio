@@ -165,7 +165,7 @@ export function GeminiChatbot({ language }: GeminiChatbotProps) {
               {isAr ? 'المساعد التقني' : 'Technical Assistant'}
             </span>
             <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">
-              {/*isAr ? 'استعلامات النظم' : 'System Queries'*/}
+              {isAr ? 'استعلامات النظم' : 'System Queries'}
             </span>
           </div>
           <span className="w-2 h-2 rounded-full bg-emerald-500 ms-1" />

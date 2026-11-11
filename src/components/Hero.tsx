@@ -21,7 +21,7 @@ export function Hero({
 }: HeroProps) {
   const t = translations[language].hero;
   const isAr = language === 'ar';
-  const cvDownloadUrl = '/assets/aistudio/CV_-_En_-PDF___Abd-el-rahman_El-damarany___86505470.pdf';
+  const cvDownloadUrl = '/assets/cv.pdf';
 
   return (
     <section className="relative pt-10 pb-16 md:pt-16 md:pb-20 border-b dark:border-white/10 border-slate-200 overflow-hidden transition-colors">
@@ -139,7 +139,7 @@ export function Hero({
                   <div className="dark:bg-slate-900/80 bg-slate-50 p-4 rounded-xl border dark:border-white/5 border-slate-200 flex items-center gap-4">
                     <div className="relative shrink-0 w-24 sm:w-28 aspect-[252/348] rounded-xl overflow-hidden ring-2 ring-blue-500/30 shadow-md bg-slate-900/20">
                       <img
-                        src="/assets/aistudio/my_picture_5948e613.png"
+                        src="/assets/profile-photo.png"
                         alt={language === 'ar' ? 'عبد الرحمن الضمراني' : 'Abdelrahman Eldamarany'}
                         className="w-full h-full object-cover object-center"
                       />

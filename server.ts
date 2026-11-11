@@ -79,7 +79,7 @@ async function startServer() {
             clientWs.send(JSON.stringify({ pong: true, timestamp: Date.now() }));
           }
         } catch {
-          // ignore
+          clientWs.send(JSON.stringify({ error: 'Malformed ping payload' }));
         }
       });
       return;
@@ -91,13 +91,13 @@ async function startServer() {
         apiKey,
         httpOptions: {
           headers: {
-            'User-Agent': 'aistudio-build',
+            'User-Agent': 'eldamarany-portfolio/1.0',
           },
         },
       });
 
       const session = await ai.live.connect({
-        model: 'gemini-3.8-live',
+        model: 'gemini-live-2.5-flash-preview',
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
@@ -139,7 +139,7 @@ async function startServer() {
       clientWs.send(
         JSON.stringify({
           status: 'connected',
-          info: 'Connected to gemini-3.8-live session',
+          info: 'Connected to Gemini Live session',
           hasApiKey: true,
         })
       );
@@ -162,11 +162,7 @@ async function startServer() {
       });
 
       clientWs.on('close', () => {
-        try {
-          session.close();
-        } catch {
-          // ignore
-        }
+        Promise.resolve(session.close()).catch(() => undefined);
       });
     } catch (err) {
       console.error('Failed to establish Gemini Live API session:', err);

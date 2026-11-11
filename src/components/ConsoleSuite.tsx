@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { ArrowLeft, Kanban, GitCommit, ShieldCheck, BookOpen, Terminal, Layers } from 'lucide-react';
 import type { Ticket, Commit, ArchitectureDoc, TerminalTheme, Language } from '../types/index.ts';
 import { TicketsBoard } from './TicketsBoard.tsx';
 import { CommitsAudit } from './CommitsAudit.tsx';
 import { TestRunner } from './TestRunner.tsx';
 import { ArchitectureDocs } from './ArchitectureDocs.tsx';
-import { ThreeScene } from './ThreeScene.tsx';
 import { translations } from '../data/translations.ts';
+
+const ThreeScene = lazy(() =>
+  import('./ThreeScene.tsx').then((m) => ({ default: m.ThreeScene }))
+);
 
 export type ConsoleTab = 'tickets' | 'commits' | 'tests' | 'docs' | '3d-cluster';
 
@@ -172,7 +175,15 @@ export function ConsoleSuite({
                 </p>
               </div>
             </div>
-            <ThreeScene language={language} className="h-[520px]" />
+            <Suspense
+              fallback={
+                <div className="h-[520px] flex items-center justify-center rounded-2xl border dark:border-white/10 border-slate-200 dark:bg-[#0B101E] bg-white">
+                  <div className="w-8 h-8 rounded-full border-2 border-blue-500/30 border-t-blue-500 animate-spin" />
+                </div>
+              }
+            >
+              <ThreeScene language={language} className="h-[520px]" />
+            </Suspense>
           </div>
         )}
       </div>

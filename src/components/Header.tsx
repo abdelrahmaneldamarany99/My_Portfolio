@@ -63,7 +63,7 @@ export function Header({
     }
   };
 
-  const cvDownloadUrl = '/assets/aistudio/CV_-_En_-PDF___Abd-el-rahman_El-damarany___86505470.pdf';
+  const cvDownloadUrl = '/assets/cv.pdf';
 
   return (
     <header className="sticky top-0 z-40 dark:bg-[#090D16]/95 bg-white/95 backdrop-blur-md border-b dark:border-white/10 border-slate-200 transition-colors mr-[52px]">
@@ -78,7 +78,7 @@ export function Header({
         >
           <div className="w-8 h-8 rounded-full overflow-hidden ring-1.5 ring-blue-500/40 shrink-0 bg-slate-200 dark:bg-slate-800 shadow-xs">
             <img
-              src="/assets/aistudio/my_picture_5948e613.png"
+              src="/assets/profile-photo.png"
               alt={language === 'ar' ? 'عبد الرحمن الضمراني' : 'Abdelrahman Eldamarany'}
               className="w-full h-full object-cover object-[center_35%]"
             />

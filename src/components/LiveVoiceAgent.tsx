@@ -158,7 +158,7 @@ export function LiveVoiceAgent({ language, isOpen, onClose }: LiveVoiceAgentProp
     ws.onopen = () => {
       setIsConnected(true);
       setStatusMessage(
-        isAr ? 'متصل بنموذج gemini-3.8-live. انقر لبدء التحدث' : 'Connected to gemini-3.8-live. Click to speak'
+        isAr ? 'متصل بمساعد الصوت المباشر. انقر لبدء التحدث' : 'Connected to the live voice assistant. Click to speak'
       );
     };
 
@@ -318,7 +318,7 @@ export function LiveVoiceAgent({ language, isOpen, onClose }: LiveVoiceAgentProp
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono dark:bg-blue-950/60 bg-blue-50 text-blue-600 dark:text-blue-400 border border-blue-500/20 mb-4">
           <Radio className="w-3.5 h-3.5 animate-pulse" />
-          <span>Gemini Live API (gemini-3.8-live)</span>
+          <span>Gemini Live API</span>
         </div>
 
         <h3 className="text-xl font-bold dark:text-white text-slate-900 mb-1">
@@ -327,7 +327,7 @@ export function LiveVoiceAgent({ language, isOpen, onClose }: LiveVoiceAgentProp
         <p className="text-xs dark:text-slate-400 text-slate-500 max-w-md mx-auto mb-6">
           {isAr
             ? 'تحدث صوتياً في الوقت الفعلي مع المساعد الذكي للاستفسار عن خبرات عبد الرحمن ومعماريات مشاريعه.'
-            : 'Converse in real-time using low-latency PCM audio streaming powered by gemini-3.8-live.'}
+            : 'Converse in real-time using low-latency PCM audio streaming.'}
         </p>
 
         <div className="relative w-48 h-48 mx-auto my-6 flex items-center justify-center">
@@ -385,8 +385,8 @@ export function LiveVoiceAgent({ language, isOpen, onClose }: LiveVoiceAgentProp
             <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
             <span>
               {isAr
-                ? 'ملاحظة: يمكنك ضبط مفتاح GEMINI_API_KEY في لوحة Secrets لتمكين تدفق الصوت المباشر من نموذج gemini-3.8-live.'
-                : 'Note: Live PCM audio streams require GEMINI_API_KEY configured in your AI Studio secrets panel.'}
+                ? 'ملاحظة: يتطلب البث الصوتي المباشر ضبط متغير البيئة GEMINI_API_KEY على الخادم.'
+                : 'Note: Live audio streaming requires the GEMINI_API_KEY environment variable to be set on the server.'}
             </span>
           </div>
         )}

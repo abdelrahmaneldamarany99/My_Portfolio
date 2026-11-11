@@ -303,7 +303,7 @@ Otherwise, respond in English by default.`;
         apiKey,
         httpOptions: {
           headers: {
-            'User-Agent': 'aistudio-build',
+            'User-Agent': 'eldamarany-portfolio/1.0',
           },
         },
       });
@@ -316,7 +316,7 @@ Otherwise, respond in English by default.`;
         : [];
 
       const chat = ai.chats.create({
-        model: 'gemini-3.8-flash',
+        model: 'gemini-2.5-flash',
         config: {
           systemInstruction: dynamicInstruction,
         },
@@ -330,7 +330,7 @@ Otherwise, respond in English by default.`;
       res.json({
         success: true,
         reply: response.text || 'No response generated.',
-        model: 'gemini-3.8-flash',
+        model: 'gemini-2.5-flash',
       });
       return;
     }
@@ -353,7 +353,7 @@ Otherwise, respond in English by default.`;
   }
 });
 
-function generateFallbackResponse(prompt: string, language: 'en' | 'ar' = 'en'): string {
+export function generateFallbackResponse(prompt: string, language: 'en' | 'ar' = 'en'): string {
   const q = prompt.toLowerCase();
   const hasArabicChars = /[\u0600-\u06FF]/.test(prompt);
   const isAr = language === 'ar' || hasArabicChars;

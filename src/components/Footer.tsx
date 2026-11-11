@@ -57,7 +57,7 @@ export function Footer({ profile, language, onNavigateView }: FooterProps) {
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-wrap items-center gap-5 sm:gap-6">
             <a
-              href="/assets/aistudio/CV_-_En_-PDF___Abd-el-rahman_El-damarany___86505470.pdf"
+              href="/assets/cv.pdf"
               download="Abdelrahman_Eldamarany_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
