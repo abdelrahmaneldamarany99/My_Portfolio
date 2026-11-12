@@ -69,7 +69,7 @@ export class Collection<T extends { _id: string }> {
 
 export const initialProfile: ProfileData = {
   name: 'Abdelrahman Eldamarany',
-  title: 'React / Next.js / MERN Full-Stack Developer',
+  title: 'Senior React / Next.js / MERN Full-Stack Developer',
   location: 'Cairo, Egypt',
   email: 'abdelrahmaneldamarany99@gmail.com',
   phone: '+02-01111295894',
@@ -79,7 +79,7 @@ export const initialProfile: ProfileData = {
     'https://github.com/abdelrahman-capital-numbers',
   ],
   summary:
-    'React / Next.js / Full-Stack (MERN) Developer with 7+ years of experience building responsive, scalable, and maintainable web applications using React, Next.js, TypeScript, Node.js, Express.js, and MongoDB, along with modern backend technologies including Nest.js, Redis, and AWS cloud services. Strong experience in frontend architecture, reusable component development, state management, RESTful API development, performance optimization, and responsive UI development. Skilled in backend middleware implementation, centralized error handling, and MongoDB queries and aggregation pipelines. Experienced in implementing Unit, Integration, and End-to-End (E2E) tests, as well as configuring and automating CI/CD pipelines to improve application reliability and streamline development and deployment workflows, & Comfortable working independently and collaborating with distributed teams. Additionally, possesses 3+ years of hands-on experience in Machine Learning, Deep Learning, and AI, providing a strong foundation for integrating intelligent features and modern AI tools into web applications.',
+    'Senior React / Next.js / Full-Stack (MERN) Developer with 7+ years of experience building responsive, scalable, and maintainable web applications using React, Next.js, TypeScript, Node.js, Express.js, and MongoDB, along with modern backend technologies including Nest.js, Redis, and AWS cloud services. Strong experience in frontend architecture, reusable component development, state management, RESTful API development, performance optimization, and responsive UI development. Skilled in backend middleware implementation, centralized error handling, and MongoDB queries and aggregation pipelines. Experienced in implementing Unit, Integration, and End-to-End (E2E) tests, as well as configuring and automating CI/CD pipelines to improve application reliability and streamline development and deployment workflows, & Comfortable working independently and collaborating with distributed teams. Additionally, possesses 3+ years of hands-on experience in Machine Learning, Deep Learning, and AI, providing a strong foundation for integrating intelligent features and modern AI tools into web applications.',
   stats: {
     yearsExperience: '7+',
     mlExperience: '3+',

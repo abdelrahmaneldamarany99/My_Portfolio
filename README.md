@@ -1,7 +1,7 @@
 # Abdelrahman Eldamarany — Portfolio & Engineering Console
 
 A production-grade personal portfolio and interactive engineering console for
-Abdelrahman Eldamarany, a React / Next.js / MERN full-stack developer based in
+Abdelrahman Eldamarany, a Senior React / Next.js / MERN full-stack developer based in
 Cairo, Egypt.
 
 The site is a single-page application backed by a small Express API. Alongside

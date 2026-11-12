@@ -194,7 +194,7 @@ export const translations: Record<Language, Translations> = {
     hero: {
       badge: 'Web Development & Architecture',
       headline: 'Building high-throughput, scalable web systems with React, Next.js, Node.js & MongoDB.',
-      description: 'I am Abdelrahman Eldamarany, a React, Next.js, and MERN Full-Stack Developer with 7+ years of experience building responsive, scalable, and maintainable web applications using React, Next.js, TypeScript, Node.js, Express.js, MongoDB, Nest.js, Redis, and AWS cloud services. Additionally, possesses 3+ years of hands-on experience in Machine Learning, Deep Learning, and AI.',
+      description: 'I am Abdelrahman Eldamarany, a Senior React, Next.js, and MERN Full-Stack Developer with 7+ years of experience building responsive, scalable, and maintainable web applications using React, Next.js, TypeScript, Node.js, Express.js, MongoDB, Nest.js, Redis, and AWS cloud services. Additionally, possesses 3+ years of hands-on experience in Machine Learning, Deep Learning, and AI.',
       launchConsole: 'Launch Engineering Console',
       contactMe: 'Contact Abdelrahman',
       cairo: 'Cairo, Egypt',
@@ -209,7 +209,7 @@ export const translations: Record<Language, Translations> = {
       runtimeSpec: '',
       statusOk: '',
       candidateProfile: 'CANDIDATE_PROFILE',
-      roleTitle: 'React / Next.js / MERN Full-Stack Developer',
+      roleTitle: 'Senior React / Next.js / MERN Full-Stack Developer',
       dataEngine: 'DATA ENGINE',
       dataEngineDesc: 'Active In-Memory Node',
       aiBase: 'AI / ML BASE',

@@ -247,7 +247,7 @@ apiRouter.get('/health', (_req, res) => {
 });
 
 const SYSTEM_INSTRUCTION = `You are the official AI Technical Lead and Architectural Assistant for Abdelrahman Eldamarany.
-Abdelrahman Eldamarany is a React / Next.js / MERN Full-Stack Developer with 7+ years of experience building high-performance, production-grade applications, and hands-on Machine Learning/AI experience.
+Abdelrahman Eldamarany is a Senior React / Next.js / MERN Full-Stack Developer with 7+ years of experience building high-performance, production-grade applications, and hands-on Machine Learning/AI experience.
 Location: Cairo, Egypt
 Email: abdelrahmaneldamarany99@gmail.com
 Phone: +02-01111295894
@@ -430,7 +430,7 @@ You can run live automated test suites directly in the **Console Suite -> Test R
 كيف يمكنني مساعدتك اليوم؟ يمكنك سؤالي عن المعمارية البرمجية، تفاصيل المشاريع، معايير الاختبارات، أو معلومات التواصل.`;
   }
 
-  return `Abdelrahman Eldamarany is a React / Next.js / MERN Full-Stack Developer with 7+ years of experience and hands-on AI/ML expertise.
+  return `Abdelrahman Eldamarany is a Senior React / Next.js / MERN Full-Stack Developer with 7+ years of experience and hands-on AI/ML expertise.
 How can I assist you today? You can ask about his architecture strategies, project implementations, testing practices, or contact information.`;
 }
 
