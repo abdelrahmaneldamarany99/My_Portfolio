@@ -54,7 +54,7 @@ export function ArchitectureDocs({
 
   return (
     <div className="space-y-6 transition-colors">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <h3 className="text-xl font-bold dark:text-white text-slate-900">{t.title}</h3>
           <p className="text-xs dark:text-slate-400 text-slate-600 mt-1">
@@ -62,7 +62,7 @@ export function ArchitectureDocs({
           </p>
         </div>
 
-        <div className="flex items-center gap-1.5 dark:bg-slate-900 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-lg p-1 text-xs font-mono">
+        <div className="flex items-center gap-1.5 dark:bg-slate-900 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-lg p-1 text-xs font-mono max-w-full overflow-x-auto">
           {docs.map((doc) => (
             <button
               key={doc.id}

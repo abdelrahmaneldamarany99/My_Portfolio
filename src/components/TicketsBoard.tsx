@@ -85,7 +85,7 @@ export function TicketsBoard({ tickets, onRefresh, language = 'en' }: TicketsBoa
 
   return (
     <div className="space-y-6 transition-colors">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <h3 className="text-xl font-bold dark:text-white text-slate-900">{t.title}</h3>
           <p className="text-xs dark:text-slate-400 text-slate-600 mt-1">
@@ -93,13 +93,13 @@ export function TicketsBoard({ tickets, onRefresh, language = 'en' }: TicketsBoa
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1 dark:bg-slate-900 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-lg p-1 text-xs font-mono">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="flex items-center gap-1 dark:bg-slate-900 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-lg p-1 text-xs font-mono max-w-full overflow-x-auto">
             {['all', 'feature', 'bug', 'perf', 'refactor'].map((type) => (
               <button
                 key={type}
                 onClick={() => setFilterType(type)}
-                className={`px-2.5 py-1 rounded transition-colors uppercase ${
+                className={`px-2.5 py-1 rounded transition-colors uppercase whitespace-nowrap ${
                   filterType === type
                     ? 'bg-blue-600 text-white font-semibold shadow-sm'
                     : 'dark:text-slate-400 text-slate-600 hover:dark:text-white hover:text-slate-900'

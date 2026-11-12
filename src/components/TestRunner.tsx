@@ -339,7 +339,7 @@ export function TestRunner({ terminalTheme = 'cobalt', onToggleTheme, language =
 
   return (
     <div className="space-y-6 transition-colors">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <h3 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
             <ShieldCheck className={`w-5 h-5 ${isRetro ? 'text-emerald-400' : 'text-blue-600 dark:text-blue-400'}`} />
@@ -351,11 +351,11 @@ export function TestRunner({ terminalTheme = 'cobalt', onToggleTheme, language =
         </div>
 
         <div className="flex flex-wrap items-center gap-2.5">
-          <div className="flex items-center gap-1 dark:bg-slate-900 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-lg p-1 text-xs font-mono">
+          <div className="flex items-center gap-1 dark:bg-slate-900 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-lg p-1 text-xs font-mono max-w-full overflow-x-auto">
             <button
               onClick={() => setScope('all')}
               disabled={isRunning}
-              className={`px-3 py-1 rounded font-medium transition-colors ${
+              className={`px-3 py-1 rounded font-medium transition-colors whitespace-nowrap ${
                 scope === 'all'
                   ? isRetro
                     ? 'bg-emerald-600 text-white shadow-sm'
@@ -368,7 +368,7 @@ export function TestRunner({ terminalTheme = 'cobalt', onToggleTheme, language =
             <button
               onClick={() => setScope('unit')}
               disabled={isRunning}
-              className={`px-3 py-1 rounded font-medium transition-colors ${
+              className={`px-3 py-1 rounded font-medium transition-colors whitespace-nowrap ${
                 scope === 'unit'
                   ? isRetro
                     ? 'bg-emerald-600 text-white shadow-sm'
@@ -381,7 +381,7 @@ export function TestRunner({ terminalTheme = 'cobalt', onToggleTheme, language =
             <button
               onClick={() => setScope('integration')}
               disabled={isRunning}
-              className={`px-3 py-1 rounded font-medium transition-colors ${
+              className={`px-3 py-1 rounded font-medium transition-colors whitespace-nowrap ${
                 scope === 'integration'
                   ? isRetro
                     ? 'bg-emerald-600 text-white shadow-sm'

@@ -82,7 +82,7 @@ export function ConsoleSuite({
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-1.5 p-1 dark:bg-slate-900 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-xl overflow-x-auto">
+          <div data-console-tabs className="flex items-center gap-1.5 p-1 dark:bg-slate-900 bg-slate-100 border dark:border-white/10 border-slate-200 rounded-xl overflow-x-auto">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;

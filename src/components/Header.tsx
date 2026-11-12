@@ -66,15 +66,15 @@ export function Header({
   const cvDownloadUrl = '/assets/cv.pdf';
 
   return (
-    <header className="sticky top-0 z-40 dark:bg-[#090D16]/95 bg-white/95 backdrop-blur-md border-b dark:border-white/10 border-slate-200 transition-colors mr-[52px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3 sm:gap-6 ml-[-26px]">
+    <header className="sticky top-0 z-40 dark:bg-[#090D16]/95 bg-white/95 backdrop-blur-md border-b dark:border-white/10 border-slate-200 transition-colors">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-6">
         <a
           href="#/overview"
           onClick={(e) => {
             e.preventDefault();
             handleSelectView('overview');
           }}
-          className="text-base sm:text-lg font-bold tracking-tight dark:text-white text-slate-900 hover:text-blue-600 transition-colors whitespace-nowrap shrink-0 flex items-center gap-2.5"
+          className="text-base sm:text-lg font-bold tracking-tight dark:text-white text-slate-900 hover:text-blue-600 transition-colors flex items-center gap-2 min-w-0"
         >
           <div className="w-8 h-8 rounded-full overflow-hidden ring-1.5 ring-blue-500/40 shrink-0 bg-slate-200 dark:bg-slate-800 shadow-xs">
             <img
@@ -83,7 +83,9 @@ export function Header({
               className="w-full h-full object-cover object-[center_35%]"
             />
           </div>
-          <span>{language === 'ar' ? 'عبد الرحمن الضمراني' : 'Abdelrahman Eldamarany'}</span>
+          <span className="truncate max-w-[5.5rem] min-[400px]:max-w-[8rem] sm:max-w-none">
+            {language === 'ar' ? 'عبد الرحمن الضمراني' : 'Abdelrahman Eldamarany'}
+          </span>
         </a>
 
         <nav className="hidden xl:flex items-center gap-1 text-sm font-medium">
@@ -107,7 +109,7 @@ export function Header({
           })}
         </nav>
 
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <a
             href={cvDownloadUrl}
             download="Abdelrahman_Eldamarany_CV.pdf"
@@ -118,7 +120,6 @@ export function Header({
           >
             <FileDown className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">{t.downloadCv}</span>
-            <span className="sm:hidden">CV</span>
           </a>
 
           <button

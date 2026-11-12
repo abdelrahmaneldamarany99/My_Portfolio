@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "check:overflow": "node scripts/check-overflow.mjs",
     "test:watch": "vitest",
     "lint": "tsc --noEmit",
     "clean": "rm -rf dist"
@@ -35,6 +36,7 @@
     "@types/three": "^0.187.0",
     "@types/ws": "^8.18.2",
     "autoprefixer": "^10.4.21",
+    "puppeteer-core": "^25.17.0",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.21.0",
     "typescript": "^7.0.2",

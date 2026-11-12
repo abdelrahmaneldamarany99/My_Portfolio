@@ -141,26 +141,26 @@ export function EngineeringRigor({
               </p>
 
               <div className="space-y-2 mb-6">
-                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2 font-mono">
-                    <span className="text-blue-600 dark:text-blue-400 font-semibold text-[11px]">ENG-104</span>
-                    <span className="dark:text-slate-200 text-slate-700 truncate max-w-[200px] sm:max-w-xs">
+                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between gap-2 text-xs">
+                  <div className="flex items-center gap-2 font-mono min-w-0 flex-1">
+                    <span className="text-blue-600 dark:text-blue-400 font-semibold text-[11px] shrink-0">ENG-104</span>
+                    <span className="dark:text-slate-200 text-slate-700 truncate min-w-0">
                       {isAr ? 'تحسين استجابة التراجع المتفائل لواجهات المهام' : 'Optimistic UI update rollback snapshot'}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-medium">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-medium shrink-0">
                     DONE
                   </span>
                 </div>
 
-                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2 font-mono">
-                    <span className="text-blue-600 dark:text-blue-400 font-semibold text-[11px]">ENG-105</span>
-                    <span className="dark:text-slate-200 text-slate-700 truncate max-w-[200px] sm:max-w-xs">
+                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between gap-2 text-xs">
+                  <div className="flex items-center gap-2 font-mono min-w-0 flex-1">
+                    <span className="text-blue-600 dark:text-blue-400 font-semibold text-[11px] shrink-0">ENG-105</span>
+                    <span className="dark:text-slate-200 text-slate-700 truncate min-w-0">
                       {isAr ? 'فهرسة مركبة لاستعلامات وتصنيفات MongoDB' : 'Compound category query index optimization'}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 font-medium">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 font-medium shrink-0">
                     QA
                   </span>
                 </div>
@@ -206,8 +206,8 @@ export function EngineeringRigor({
               </p>
 
               <div className="space-y-2 mb-6 text-xs font-mono">
-                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between">
-                  <div className="truncate max-w-[220px] sm:max-w-xs font-medium dark:text-slate-200 text-slate-800">
+                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between gap-2">
+                  <div className="truncate min-w-0 flex-1 font-medium dark:text-slate-200 text-slate-800">
                     feat(auth): add JWT refresh token rotation with httpOnly cookies
                   </div>
                   <div className="flex items-center gap-2 shrink-0 text-[11px]">
@@ -216,8 +216,8 @@ export function EngineeringRigor({
                   </div>
                 </div>
 
-                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between">
-                  <div className="truncate max-w-[220px] sm:max-w-xs font-medium dark:text-slate-200 text-slate-800">
+                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between gap-2">
+                  <div className="truncate min-w-0 flex-1 font-medium dark:text-slate-200 text-slate-800">
                     perf(mongo): compound indexing on project categories & techStack
                   </div>
                   <div className="flex items-center gap-2 shrink-0 text-[11px]">
@@ -266,20 +266,20 @@ export function EngineeringRigor({
               </p>
 
               <div className="space-y-2 mb-6 text-xs font-mono">
-                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] bg-blue-600 text-white font-bold">GET</span>
-                    <span className="dark:text-slate-200 text-slate-700">/api/projects</span>
+                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2 min-w-0 flex-1">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] bg-blue-600 text-white font-bold shrink-0">GET</span>
+                    <span className="dark:text-slate-200 text-slate-700 truncate min-w-0">/api/projects</span>
                   </div>
-                  <span className="text-emerald-500 text-[11px]">200 OK</span>
+                  <span className="text-emerald-500 text-[11px] shrink-0">200 OK</span>
                 </div>
 
-                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-600 text-white font-bold">GET</span>
-                    <span className="dark:text-slate-200 text-slate-700">/api/health</span>
+                <div className="p-2.5 rounded-lg dark:bg-slate-900/80 bg-slate-50 border dark:border-white/5 border-slate-200 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2 min-w-0 flex-1">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-600 text-white font-bold shrink-0">GET</span>
+                    <span className="dark:text-slate-200 text-slate-700 truncate min-w-0">/api/health</span>
                   </div>
-                  <span className="text-emerald-500 text-[11px]">200 OK</span>
+                  <span className="text-emerald-500 text-[11px] shrink-0">200 OK</span>
                 </div>
               </div>
             </div>
