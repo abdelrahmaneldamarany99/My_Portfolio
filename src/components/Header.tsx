@@ -83,7 +83,7 @@ export function Header({
               className="w-full h-full object-cover object-[center_35%]"
             />
           </div>
-          <span className="truncate max-w-[5.5rem] min-[400px]:max-w-[8rem] sm:max-w-none">
+          <span className="truncate max-w-[5.5rem] min-[400px]:max-w-[8rem] sm:max-w-none text-[7px] sm:text-[7px]">
             {language === 'ar' ? 'عبد الرحمن الضمراني' : 'Abdelrahman Eldamarany'}
           </span>
         </a>
