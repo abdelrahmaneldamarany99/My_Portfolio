@@ -247,7 +247,7 @@ apiRouter.get('/health', (_req, res) => {
 });
 
 const SYSTEM_INSTRUCTION = `You are the official AI Technical Lead and Architectural Assistant for Abdelrahman Eldamarany.
-Abdelrahman Eldamarany is a Senior React / Next.js / MERN Full-Stack Developer with 7+ years of experience building high-performance, production-grade applications, and 3+ years of Machine Learning/AI experience.
+Abdelrahman Eldamarany is a React / Next.js / MERN Full-Stack Developer with 7+ years of experience building high-performance, production-grade applications, and hands-on Machine Learning/AI experience.
 Location: Cairo, Egypt
 Email: abdelrahmaneldamarany99@gmail.com
 Phone: +02-01111295894
@@ -256,19 +256,19 @@ LinkedIn: https://linkedin.com/in/abdelrahman-eldamarany/
 
 Core Technical Competencies:
 - Frontend: React 19/18, Next.js (App & Pages router), TypeScript, Redux Toolkit, Zustand, Tailwind CSS, Responsive Design, WebSockets, Three.js 3D visualization.
-- Backend: Node.js, Express.js, Nest.js, RESTful APIs, JWT authentication, Microservices patterns, Centralized error handling, Middleware architecture.
-- Database: MongoDB (schema design, indexing, aggregation pipelines), Redis (caching, pub/sub), PostgreSQL.
+- Backend: Node.js, Express.js, Nest.js, RESTful APIs, JWT authentication, Supabase & Firebase, Centralized error handling, Middleware architecture.
+- Database: MongoDB (schema design, indexing, aggregation pipelines), Redis (caching), SQL.
 - Testing & Quality: Unit, Integration, and E2E testing (Jest, React Testing Library, Supertest), CI/CD pipelines, ESLint/Prettier, Docker containerization.
 - Machine Learning / AI: 3+ years hands-on experience in ML/DL, Gemini API integration, real-time voice and streaming AI agents.
 
 Key Projects in Portfolio:
-1. Task Management System (MERN, JWT, Indexed MongoDB, Real-time updates, Drag-and-drop workflow).
-2. Nana Food (Next.js, TypeScript, Zustand, Google Maps driver telemetry).
-3. Car Wash Hub (React, Node.js, Express, MongoDB, Real-time booking slots).
-4. AI Audio Transcription & Summarizer (Gemini API, Whisper, Next.js, Express).
-5. Real-Time Collaborative Canvas (React, Node.js, WebSockets, Canvas API).
-6. Distributed Log Analyzer & Metric Aggregator (Node.js, Express, Redis, MongoDB).
-7. Headless E-Commerce Platform (Next.js, TypeScript, Stripe, MongoDB).
+1. Task Management System (MERN, JWT auth, task tracking, CRUD operations).
+2. Nana Food (React, TypeScript, Zustand, Tailwind CSS, Google Maps driver tracking).
+3. Smart Mall Management System (Next.js, TypeScript, AI-powered customer support chatbot).
+4. ShopSphere (React, TypeScript, Supabase, Context API, Tailwind CSS e-commerce).
+5. Business Operations Dashboard (React, TypeScript, Node.js, Redux data management).
+6. Location-Based Landmarks Application (Next.js, TypeScript, Supabase, AI chatbot).
+7. Medical PDF Generator Dashboard (React, Node.js, React Table, PDF generation).
 
 Communication Guidelines:
 - Primary and default communication language is English.
@@ -376,18 +376,20 @@ export function generateFallbackResponse(prompt: string, language: 'en' | 'ar' =
   if (q.includes('project') || q.includes('مشروع') || q.includes('مشاريع') || q.includes('task') || q.includes('nana')) {
     if (isAr) {
       return `قام عبد الرحمن بتصميم وتطوير العديد من الأنظمة البرمجية المتكاملة بمستوى Production-grade:
-1. **نظام إدارة المهام (Task Management System)**: تطبيق MERN متكامل مع توثيق JWT وأذونات الأدوار واستعلامات MongoDB سريعة (<24ms).
-2. **منصة Nana Food**: تطبيق توصيل بـ Next.js و TypeScript وتتبع فوري للسائقين عبر خرائط Google.
-3. **منصة Car Wash Hub**: نظام حجز فوري للمواعيد مبني بـ React و Node.js و Express و MongoDB.
-4. **أداة تفريغ وتلخيص الصوت بالذكاء الاصطناعي**: معالجة صوتية حية مع نماذج Gemini وخوارزميات Whisper.
-5. **لوحة الرسم التفاعلية متعددة المستخدمين (Collaborative Canvas)**: تحديثات فورية بتقنية WebSockets.
+1. **نظام إدارة المهام (Task Management System)**: تطبيق MERN متكامل مع توثيق JWT وأذونات الأدوار واستعلامات MongoDB سريعة.
+2. **منصة Nana Food**: تطبيق توصيل بـ React و TypeScript و Zustand وتتبع فوري للسائقين عبر خرائط Google.
+3. **نظام إدارة المول الذكي (Smart Mall)**: منصة إدارة مراكز تجارية بـ Next.js و TypeScript ومساعد ذكي للعملاء.
+4. **منصة ShopSphere**: متجر إلكتروني بـ React و TypeScript و Supabase و Context API.
+5. **لوحة العمليات التجارية (Business Operations Dashboard)**: لوحة بيانات إدارية بـ React و Node.js و Redux.
+6. **تطبيق المعالم المعتمد على الموقع (Landmarks App)**: دليل سياحي تفاعلي بـ Next.js و Supabase ومساعد AI.
 يمكنك استعراض تفاصيل كافة المشاريع في صفحة المشاريع أو الكونسول!`;
     }
     return `Abdelrahman has engineered several production-grade applications featured in this portfolio:
-1. **Task Management System**: Full-stack MERN with JWT auth, role-based workflows, and indexed MongoDB aggregation (<24ms query latency).
-2. **Nana Food**: Next.js and TypeScript delivery client with Google Maps driver telemetry and Zustand state slices.
-3. **AI Audio Transcription & Summarizer**: Real-time audio processing with Gemini models and Whisper pipeline.
-4. **Real-Time Collaborative Canvas**: WebSocket-driven multiplayer whiteboard with vector undo/redo stacks.
+1. **Task Management System**: Full-stack MERN with JWT auth, role-based workflows, and indexed MongoDB aggregation.
+2. **Nana Food**: React and TypeScript delivery client with Google Maps driver telemetry and Zustand state slices.
+3. **Smart Mall Management System**: Next.js admin portal with an AI-powered customer support chatbot.
+4. **ShopSphere**: React e-commerce platform with Supabase backend and Context API state.
+5. **Business Operations Dashboard**: React/Node.js/Redux data management dashboard with high-throughput tables.
 Feel free to explore the interactive Ticket and Projects tab in the console!`;
   }
 
@@ -428,7 +430,7 @@ You can run live automated test suites directly in the **Console Suite -> Test R
 كيف يمكنني مساعدتك اليوم؟ يمكنك سؤالي عن المعمارية البرمجية، تفاصيل المشاريع، معايير الاختبارات، أو معلومات التواصل.`;
   }
 
-  return `Abdelrahman Eldamarany is a Senior React / Next.js / MERN Full-Stack Developer with 7+ years of experience and 3+ years in AI/ML.
+  return `Abdelrahman Eldamarany is a React / Next.js / MERN Full-Stack Developer with 7+ years of experience and hands-on AI/ML expertise.
 How can I assist you today? You can ask about his architecture strategies, project implementations, testing practices, or contact information.`;
 }
 

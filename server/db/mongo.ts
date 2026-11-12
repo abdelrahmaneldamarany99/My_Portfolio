@@ -160,7 +160,7 @@ export const initialProjects: Project[] = [
       'Next.js enterprise administration portal with interactive merchant dashboards and an integrated AI concierge for customer support.',
     description:
       'Built a centralized commercial property system that unifies tenant leases, visitor analytics, utility tracking, and automated AI assistance for visitor navigation and store inquiries.',
-    techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'AI Chatbot', 'PostgreSQL', 'Prisma'],
+    techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'AI Chatbot'],
     architectureHighlights: [
       'Next.js Server Actions with streamed AI completion responses',
       'Multi-role access control for mall operators vs tenant managers',

@@ -29,7 +29,7 @@ function getGreeting(lang: Language): Message {
     role: 'model',
     text:
       lang === 'ar'
-        ? 'مرحباً بك! أنا المساعد التقني والمعماري للمهندس عبد الرحمن الضمراني.\n\nيمكنك الاستفسار عن خبرته العملية (+7 سنوات في React, Next.js و Full-Stack و +3 سنوات في الذكاء الاصطناعي)، أو استراتيجيات المعمارية النظيفة، ومشاريع مثل (نظام إدارة المهام، Nana Food، Car Wash Hub)، ومعايير جودة الكود واختبارات CI/CD.'
+        ? 'مرحباً بك! أنا المساعد التقني والمعماري للمهندس عبد الرحمن الضمراني.\n\nيمكنك الاستفسار عن خبرته العملية (+7 سنوات في React, Next.js و Full-Stack و +3 سنوات في الذكاء الاصطناعي)، أو استراتيجيات المعمارية النظيفة، ومشاريع مثل (نظام إدارة المهام، Nana Food، نظام Mall الذكي)، ومعايير جودة الكود واختبارات CI/CD.'
         : 'Welcome. I am the technical architectural assistant for Abdelrahman Eldamarany.\n\nAsk about his 7+ years of React, Next.js & Full-Stack production experience, 3+ years in AI/ML, architectural decisions, testing paradigms, or project case studies.',
     timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
   };
