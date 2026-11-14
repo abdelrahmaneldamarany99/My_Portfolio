@@ -7,6 +7,7 @@ import {
   Maximize2,
   Terminal,
   CheckCircle2,
+  Bot,
 } from 'lucide-react';
 import type { Language } from '../types/index.ts';
 
@@ -22,6 +23,7 @@ interface GeminiChatbotProps {
 }
 
 const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+const MIN_THINKING_MS = 1000;
 
 function getGreeting(lang: Language): Message {
   return {
@@ -89,6 +91,14 @@ export function GeminiChatbot({ language }: GeminiChatbotProps) {
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     };
 
+    const startedAt = Date.now();
+    const waitForMinimumThinking = async () => {
+      const remaining = MIN_THINKING_MS - (Date.now() - startedAt);
+      if (remaining > 0) {
+        await new Promise((resolve) => setTimeout(resolve, remaining));
+      }
+    };
+
     setMessages((prev) => [...prev, userMessage]);
     if (!textToSend) setInput('');
     setLoading(true);
@@ -112,6 +122,7 @@ export function GeminiChatbot({ language }: GeminiChatbotProps) {
       });
 
       const data = await res.json();
+      await waitForMinimumThinking();
       const replyText = data.reply || (isAr ? 'عذراً، لم أتلق رداً صالحاً.' : 'Sorry, received an empty response.');
 
       const modelMessage: Message = {
@@ -123,6 +134,7 @@ export function GeminiChatbot({ language }: GeminiChatbotProps) {
 
       setMessages((prev) => [...prev, modelMessage]);
     } catch {
+      await waitForMinimumThinking();
       const errorMessage: Message = {
         id: String(Date.now() + 1),
         role: 'model',
@@ -252,8 +264,17 @@ export function GeminiChatbot({ language }: GeminiChatbotProps) {
 
             {loading && (
               <div className="flex items-center gap-2.5 p-3 rounded-xl dark:bg-slate-800/50 bg-slate-100 max-w-xs text-xs dark:text-slate-300 text-slate-600">
-                <Terminal className="w-4 h-4 text-blue-500 animate-pulse" />
-                <span>{isAr ? 'جاري استرجاع الاستجابة المعمارية...' : 'Querying architectural knowledge base...'}</span>
+                <span className="relative flex items-center justify-center w-6 h-6 rounded-lg bg-blue-600/10 border border-blue-500/20 text-blue-500 shrink-0">
+                  <Bot className="w-3.5 h-3.5 animate-pulse" />
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span>{isAr ? 'جاري إعداد الإجابة...' : 'Thinking...'}</span>
+                  <span className="inline-flex items-center gap-0.5 font-mono">
+                    <span className="w-1 h-1 rounded-full bg-blue-500 animate-bounce [animation-delay:0ms]" />
+                    <span className="w-1 h-1 rounded-full bg-blue-500 animate-bounce [animation-delay:150ms]" />
+                    <span className="w-1 h-1 rounded-full bg-blue-500 animate-bounce [animation-delay:300ms]" />
+                  </span>
+                </span>
               </div>
             )}
             <div ref={messagesEndRef} />
