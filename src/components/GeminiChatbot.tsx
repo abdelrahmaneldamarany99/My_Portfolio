@@ -10,6 +10,7 @@ import {
   Bot,
 } from 'lucide-react';
 import type { Language } from '../types/index.ts';
+import { generateFallbackResponse } from '../../shared/assistant.ts';
 
 interface Message {
   id: string;
@@ -123,7 +124,7 @@ export function GeminiChatbot({ language }: GeminiChatbotProps) {
 
       const data = await res.json();
       await waitForMinimumThinking();
-      const replyText = data.reply || (isAr ? 'عذراً، لم أتلق رداً صالحاً.' : 'Sorry, received an empty response.');
+      const replyText = data.reply || generateFallbackResponse(text, language);
 
       const modelMessage: Message = {
         id: String(Date.now() + 1),
@@ -135,15 +136,13 @@ export function GeminiChatbot({ language }: GeminiChatbotProps) {
       setMessages((prev) => [...prev, modelMessage]);
     } catch {
       await waitForMinimumThinking();
-      const errorMessage: Message = {
+      const fallbackMessage: Message = {
         id: String(Date.now() + 1),
         role: 'model',
-        text: isAr
-          ? 'حدث خطأ في الاتصال بالخادم. يرجى إعادة المحاولة لاحقاً.'
-          : 'Network error communicating with the AI service. Please try again.',
+        text: generateFallbackResponse(text, language),
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
-      setMessages((prev) => [...prev, errorMessage]);
+      setMessages((prev) => [...prev, fallbackMessage]);
     } finally {
       setLoading(false);
     }
