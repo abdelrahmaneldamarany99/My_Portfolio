@@ -28,6 +28,7 @@ import { Education } from './components/Education.tsx';
 import type { ConsoleTab } from './components/ConsoleSuite.tsx';
 import { ContactModal } from './components/ContactModal.tsx';
 import { Footer } from './components/Footer.tsx';
+import { DevNotice } from './components/DevNotice.tsx';
 import { ArrowRight, FolderGit2, ShieldCheck, Milestone, Terminal, FileDown } from 'lucide-react';
 
 const ProjectEngagementStats = lazy(() =>
@@ -193,6 +194,8 @@ export default function App() {
         theme={theme}
         onToggleTheme={setTheme}
       />
+
+      <DevNotice language={language} />
 
       <main className="flex-1">
         {activeView === 'overview' && (
